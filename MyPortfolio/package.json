@@ -1,0 +1,34 @@
+{
+  "name": "myportfolio",
+  "version": "1.0.0",
+  "description": "web application built using node js to display all my captures",
+  "main": "start_server.js",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "bootstrap": "^4.3.1",
+    "express": "^4.17.0",
+    "express-handlebars": "^3.1.0",
+    "firebase": "^6.0.2",
+    "jquery": "^3.4.1",
+    "mongoose": "^5.5.9",
+    "morgan": "^1.9.1",
+    "mysql": "^2.17.1",
+    "passport": "^0.4.0",
+    "passport-local": "^1.0.0",
+    "sqlite3": "^4.0.8"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sriram012/Portfolio.git"
+  },
+  "author": "sriram",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sriram012/Portfolio/issues"
+  },
+  "homepage": "https://github.com/sriram012/Portfolio#readme"
+}

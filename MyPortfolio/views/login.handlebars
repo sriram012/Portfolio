@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+    
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Portflio -Login</title>
+
+        <link rel="stylesheet" href="/css/bootstrap.css">
+    </head>
+    <body>
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-2"></div>
+                <div class="col-2">
+                    <form method="POST" action="/login">
+                        <input type="email" name="email" placeholder="Email Id..." required / >
+                        <input type="password" name="password" placeholder="Password..." required / >
+                        <input type="submit" value="LOG IN" / >
+                    </form>
+                    {{!-- <form method="POST" action="/login/google">
+                        <input type="submit" / >
+                    </form> --}}
+                    <button id="google_signin" onclick="googleSignIn()">Sign In with Google</button>
+                </div>
+            </div>
+        </div>
+    </body>
+
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <!-- Firebase App (the core Firebase SDK) is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/6.0.2/firebase-app.js"></script>
+    <!-- Add Firebase products that you want to use -->
+    <script src="https://www.gstatic.com/firebasejs/6.0.2/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/6.0.2/firebase-firestore.js"></script>
+    {{!-- <script src="/js/firebase/init_firebaseApp"></script> --}}
+    <script>
+        // Your web app's Firebase configuration
+        var firebaseConfig = {
+            apiKey: "AIzaSyCvmM-LF1rJ_ztVgkZElIhXkkwAEw1Juz8",
+            authDomain: "protfolio-fa3e5.firebaseapp.com",
+            databaseURL: "https://protfolio-fa3e5.firebaseio.com",
+            projectId: "protfolio-fa3e5",
+            storageBucket: "protfolio-fa3e5.appspot.com",
+            messagingSenderId: "442993637183",
+            appId: "1:442993637183:web:ba065e494e0c744e"
+        };
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+
+        // Functions...
+        function googleSignIn() {
+            var googleAuthProvider = new firebase.auth.GoogleAuthProvider;
+            firebase.auth().signInWithPopup(googleAuthProvider)
+                .then(function(result) {
+                    console.log(result);
+                    // This gives you a Google Access Token. You can use it to access the Google API.
+                    var token = result.credential.accessToken;
+                    // The signed-in user info.
+                    var user = result.user;
+                    console.log(user);
+                    // ...
+                })
+                .catch(function(error) {
+                    console.log(error);
+                    // Handle Errors here.
+                    var errorCode = error.code;
+                    var errorMessage = error.message;
+                    // The email of the user's account used.
+                    var email = error.email;
+                    // The firebase.auth.AuthCredential type that was used.
+                    var credential = error.credential;
+                    // ...
+                });
+        }
+    </script>
+
+</html>
