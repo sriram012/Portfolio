@@ -18,6 +18,7 @@ function main() {
 
 
 
+
 // Variables
 var postSlideIndex = 0;
 var preSlideIndex = 0;
@@ -33,6 +34,7 @@ var timer = null;
 var mouseX = null, mouseY = null;
 
 main();
+
 
 
 
