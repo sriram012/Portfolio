@@ -12,4 +12,4 @@ router.get('/', (request, response) => {
 });
 
 
-module.exports = {router: router};
+module.exports.router = router;
